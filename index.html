@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RB Codex — Inovando o Futuro Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div id="toast" class="toast">✓ Mensagem enviada com sucesso!</div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" fill="none" stroke="rgba(74,229,74,0.3)"
+            stroke-width="1" />
+          <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="#4AE54A"
+            font-family="Orbitron,monospace" font-weight="900" font-size="14">RB</text>
+        </svg>
+      </div>
+      <span class="nav-logo-text"><span>RB</span> CODEX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#team">Equipe</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Solicitar Projeto</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-particles" id="particles"></div>
+
+    <!-- Circuit decoration -->
+    <svg class="hero-circuit" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="100" y="100" width="400" height="400" stroke="#4AE54A" stroke-width="1" fill="none" />
+      <circle cx="100" cy="100" r="5" fill="#4AE54A" />
+      <circle cx="500" cy="100" r="5" fill="#4AE54A" />
+      <circle cx="100" cy="500" r="5" fill="#4AE54A" />
+      <circle cx="500" cy="500" r="5" fill="#4AE54A" />
+      <line x1="100" y1="200" x2="200" y2="200" stroke="#4AE54A" stroke-width="1" />
+      <line x1="200" y1="200" x2="200" y2="150" stroke="#4AE54A" stroke-width="1" />
+      <circle cx="200" cy="150" r="4" fill="#4AE54A" />
+      <line x1="500" y1="300" x2="400" y2="300" stroke="#4AE54A" stroke-width="1" />
+      <line x1="400" y1="300" x2="400" y2="350" stroke="#4AE54A" stroke-width="1" />
+      <circle cx="400" cy="350" r="4" fill="#4AE54A" />
+      <rect x="220" y="220" width="160" height="160" stroke="#4AE54A" stroke-width="0.5" fill="rgba(74,229,74,0.02)" />
+      <line x1="300" y1="100" x2="300" y2="220" stroke="#4AE54A" stroke-width="0.5" stroke-dasharray="4,4" />
+      <line x1="300" y1="380" x2="300" y2="500" stroke="#4AE54A" stroke-width="0.5" stroke-dasharray="4,4" />
+    </svg>
+
+    <div class="hero-content">
+      <div class="hero-tag">INOVANDO O FUTURO DIGITAL</div>
+      <div class="hero-logo-large">BEM-VINDO À <strong>RB CODEX</strong></div>
+      <h1 class="hero-title">
+        Transformamos<br>
+        <span>Ideias em Código</span>
+      </h1>
+      <p class="hero-subtitle">
+        Desenvolvemos soluções digitais de alta performance — websites, aplicativos e sistemas sob medida para
+        impulsionar o seu negócio no mundo digital.
+      </p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">Ver Projetos</a>
+        <a href="#contact" class="btn-secondary">Fale Conosco</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      SCROLL
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-value" data-count="30">0</span>
+          <span class="stat-label">Projetos Entregues</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-value" data-count="100">0</span>
+          <span class="stat-label">% Satisfação</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-value" data-count="2">0</span>
+          <span class="stat-label">Anos de Experiência</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-value" data-count="24">0</span>
+          <span class="stat-label">Suporte / 7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// O que fazemos</span>
+        <h2 class="section-title">Nossos <em>Serviços</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-num">01</span>
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">Desenvolvimento Web</h3>
+          <p class="service-desc">Sites modernos, responsivos e otimizados para SEO. Do landing page ao sistema web
+            completo, entregamos com qualidade e velocidade.</p>
+          <div class="service-tags">
+            <span class="service-tag">React</span>
+            <span class="service-tag">Next.js</span>
+            <span class="service-tag">Node.js</span>
+            <span class="service-tag">WordPress</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">02</span>
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">Aplicativos Mobile</h3>
+          <p class="service-desc">Apps iOS e Android com experiência nativa ou híbrida. Interfaces intuitivas e
+            performance otimizada para todos os dispositivos.</p>
+          <div class="service-tags">
+            <span class="service-tag">React Native</span>
+            <span class="service-tag">Flutter</span>
+            <span class="service-tag">Firebase</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">03</span>
+          <div class="service-icon">⚙️</div>
+          <h3 class="service-title">Sistemas & APIs</h3>
+          <p class="service-desc">Sistemas de gestão, dashboards, APIs RESTful e integrações. Automatize processos e
+            ganhe eficiência operacional.</p>
+          <div class="service-tags">
+            <span class="service-tag">Python</span>
+            <span class="service-tag">PostgreSQL</span>
+            <span class="service-tag">REST API</span>
+            <span class="service-tag">Docker</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">04</span>
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Design centrado no usuário com protótipos interativos. Interfaces que convertem
+            visitantes em clientes fiéis.</p>
+          <div class="service-tags">
+            <span class="service-tag">Figma</span>
+            <span class="service-tag">Design System</span>
+            <span class="service-tag">Protótipos</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">05</span>
+          <div class="service-icon">☁️</div>
+          <h3 class="service-title">Cloud & DevOps</h3>
+          <p class="service-desc">Deploy, hospedagem e infraestrutura em nuvem. CI/CD, monitoramento e escalabilidade
+            para sua aplicação crescer.</p>
+          <div class="service-tags">
+            <span class="service-tag">AWS</span>
+            <span class="service-tag">GCP</span>
+            <span class="service-tag">CI/CD</span>
+            <span class="service-tag">Nginx</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">06</span>
+          <div class="service-icon">🤖</div>
+          <h3 class="service-title">Inteligência Artificial</h3>
+          <p class="service-desc">Integração de IA nos seus sistemas: chatbots, análise de dados, automações
+            inteligentes e muito mais.</p>
+          <div class="service-tags">
+            <span class="service-tag">OpenAI</span>
+            <span class="service-tag">Machine Learning</span>
+            <span class="service-tag">Automação</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// Nosso trabalho</span>
+        <h2 class="section-title">Portfólio de <em>Projetos</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="system">Sistemas</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Projects injected by JS -->
+        <div class="add-project-card reveal" id="addProjectBtn">
+          <div class="add-project-inner">
+            <div class="add-icon">+</div>
+            <div class="add-title">Adicionar Projeto</div>
+            <div class="add-hint">// clique para cadastrar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// Quem somos</span>
+        <h2 class="section-title">Nossa <em>Equipe</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">R</div>
+          <div class="team-name">Rafael Mruk</div>
+          <div class="team-role">// Full Stack Developer</div>
+          <p class="team-bio">Desenvolvedor apaixonado por tecnologia, com foco em criar soluções inovadoras e de alta
+            performance para clientes exigentes.</p>
+          <div class="team-skills">
+            <span class="team-skill">React</span>
+            <span class="team-skill">Node.js</span>
+            <span class="team-skill">Python</span>
+            <span class="team-skill">AWS</span>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar">B</div>
+          <div class="team-name">Brenno Braz</div>
+          <div class="team-role">Front-End Developer | Mobile & IA Enthusiast</div>
+          <p class="team-bio">Desenvolvedor front-end com foco em construção de interfaces performáticas e bem
+            estruturadas. Tenho interesse em expandir minha atuação para o desenvolvimento mobile e integração com
+            inteligência artificial, buscando criar soluções digitais modernas e eficientes.</p>
+          <div class="team-skills">
+            <span class="team-skill">HTML</span>
+            <span class="team-skill">CSS</span>
+            <span class="team-skill">JavaScript</span>
+            <span class="team-skill">Python</span>
+            <span class="team-skill">+ Estudando: Mobile & IA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// Entre em contato</span>
+        <h2 class="section-title">Vamos <em>Construir</em> Juntos</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info reveal">
+          <h3>Pronto para seu próximo projeto digital?</h3>
+          <p>Estamos aqui para transformar sua visão em realidade. Fale conosco e descubra como a RB Codex pode
+            impulsionar seu negócio.</p>
+          <div class="contact-items">
+            <a href="mailto:rbcodexti@gmail.com" class="contact-item">
+              <div class="contact-icon-wrap"><img width="24" height="24"
+                  src="https://img.icons8.com/external-those-icons-fill-those-icons/24/external-Gmail-social-media-those-icons-fill-those-icons.png"
+                  alt="external-Gmail-social-media-those-icons-fill-those-icons" /></div>
+              <div>
+                <span class="contact-item-label">EMAIL</span>
+                <span class="contact-item-text">rbcodexti@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://wa.me/5562993454968" class="contact-item">
+              <div class="contact-icon-wrap"><img width="24" height="24"
+                  src="https://img.icons8.com/material-outlined/24/whatsapp--v1.png" alt="whatsapp--v1" /></div>
+              <div>
+                <span class="contact-item-label">WHATSAPP</span>
+                <span class="contact-item-text">+55 (62) 99345-4968</span>
+              </div>
+            </a>
+            <!-- <a href="https://wa.me/5562993454968" class="contact-item">
+              <div class="contact-icon-wrap">💬</div>
+              <div>
+                <span class="contact-item-label">WHATSAPP</span>
+                <span class="contact-item-text">+55 (00) 00000-0000</span>
+              </div>
+            </a> -->
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><img width="28" height="28"
+                  src="https://img.icons8.com/ios-filled/50/place-marker--v1.png" alt="place-marker--v1" /></div>
+              <div>
+                <span class="contact-item-label">LOCALIZAÇÃO</span>
+                <span class="contact-item-text">Brasil — Atendimento Remoto</span>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn" title="GitHub"><img width="42" height="42"
+                src="https://img.icons8.com/sf-black-filled/50/github.png" alt="github" /></a>
+            <a href="#" class="social-btn" title="LinkedIn"><img width="42" height="42"
+                src="https://img.icons8.com/sf-black-filled/50/linkedin.png" alt="linkedin" /></a>
+            <a href="#" class="social-btn" title="Instagram"><img width="32" height="32"
+                src="https://img.icons8.com/ios-glyphs/30/instagram-new.png" alt="instagram-new" /></a>
+            <!-- <a href="https://wa.me/5562993454968" class="social-btn" title="WhatsApp"><img width="24" height="24"
+                src="https://img.icons8.com/material-outlined/24/whatsapp--v1.png" alt="whatsapp--v1" /></a> -->
+          </div>
+        </div>
+        <div class="contact-form reveal form-coming-soon">
+          <div class="dev-overlay">
+            <div class="dev-badge">
+              <div class="lock-wrap">
+                <div class="lock-icon">
+                  <div class="lock-body"></div>
+                  <div class="lock-shackle"></div>
+                </div>
+              </div>
+              <h3>Em desenvolvimento</h3>
+              <p>Essa área ainda está sendo finalizada.</p>
+            </div>
+          </div>
+
+          <span class="section-tag">Ainda em Desenvolvimento</span>
+
+          <div class="form-group">
+            <label class="form-label">Nome Completo</label>
+            <input type="text" class="form-input" id="contactName" placeholder="Seu nome" disabled>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">E-mail</label>
+            <input type="email" class="form-input" id="contactEmail" placeholder="seu@email.com" disabled>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tipo de Projeto</label>
+            <select class="form-input form-select" id="contactType" disabled>
+              <option value="">Selecione...</option>
+              <option>Website / Landing Page</option>
+              <option>Aplicativo Mobile</option>
+              <option>Sistema Web</option>
+              <option>E-commerce</option>
+              <option>API / Integração</option>
+              <option>UI/UX Design</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mensagem</label>
+            <textarea class="form-input form-textarea" id="contactMessage" placeholder="Descreva seu projeto..."
+              disabled></textarea>
+          </div>
+
+          <button class="btn-primary" disabled>ENVIAR MENSAGEM →</button>
+          <p id="formStatus" style="margin-top: 12px;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo-text" style="font-size:1.6rem; display:block; margin-bottom:8px;"><span
+              style="color:var(--green)">RB</span> CODEX</span>
+          <div class="footer-tagline">// INOVANDO O FUTURO DIGITAL</div>
+          <p>Desenvolvemos soluções digitais completas, desde websites até sistemas complexos. Qualidade, inovação e
+            comprometimento em cada linha de código.</p>
+        </div>
+        <div class="footer-col">
+          <h4>NAVEGAÇÃO</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#team">Equipe</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SERVIÇOS</h4>
+          <ul class="footer-links">
+            <li><a href="#">Desenvolvimento Web</a></li>
+            <li><a href="#">Apps Mobile</a></li>
+            <li><a href="#">Sistemas & APIs</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Cloud & DevOps</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 <span>RB Codex</span>. Todos os direitos reservados.</span>
+        <span class="footer-copy"
+          style="font-family:'Share Tech Mono'; font-size:0.65rem; color: rgba(74,229,74,0.4);">BUILD_v1.0.0 // INOVANDO
+          O FUTURO DIGITAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ADD PROJECT MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-title">// ADICIONAR PROJETO</div>
+      <div class="form-group">
+        <label class="form-label">Nome do Projeto</label>
+        <input type="text" class="form-input" id="pName" placeholder="Ex: App de Delivery">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Categoria</label>
+        <select class="form-input form-select" id="pCat">
+          <option value="web">Web</option>
+          <option value="mobile">Mobile</option>
+          <option value="system">Sistema</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Descrição</label>
+        <textarea class="form-input form-textarea" id="pDesc" placeholder="Descreva o projeto..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">URL do Projeto (opcional)</label>
+        <input type="text" class="form-input" id="pUrl" placeholder="https://seuprojeto.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tecnologias (separadas por vírgula)</label>
+        <input type="text" class="form-input" id="pTech" placeholder="React, Node.js, MongoDB">
+      </div>
+      <div class="form-group">
+        <label class="form-label">URL de Preview / Screenshot (opcional)</label>
+        <input type="text" class="form-input" id="pPreview" placeholder="https://img.seu-projeto.com/screenshot.png">
+      </div>
+      <button class="btn-primary" style="width:100%; clip-path:none; border:none;" onclick="addProject()">ADICIONAR
+        PROJETO</button>
+    </div>
+  </div>
+
+
+  <script src="script/script.js"></script>
+  <script src="script/server.js"></script>
+</body>
+
+</html>
