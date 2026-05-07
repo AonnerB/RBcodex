@@ -98,26 +98,28 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// === PROJECT MODAL ===
-document.getElementById('addProjectBtn').addEventListener('click', () => {
-  document.getElementById('projectModal').classList.add('open');
-});
-
-function closeModal() {
-  document.getElementById('projectModal').classList.remove('open');
-}
-
-document.getElementById('projectModal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('projectModal')) closeModal();
-});
-
-// === ADD PROJECT ===
-const projects = JSON.parse(localStorage.getItem('r3projects') || '[]');
+// === PROJECTS PUBLICOS ===
+// Edite esta lista para escolher quais projetos aparecem no site publico.
+// Depois salve, envie para o GitHub e faca novo deploy na Vercel.
+const projects = [
+  // Exemplo:
+  // {
+  //   name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
+  //   cat: 'web', // web | mobile | system
+  //   desc: 'Projeto de website para clínica de geriatria',
+  //   url: 'https://www.longevitegeriatria.com.br/',
+  //   tech: 'HTML,CSS,JavaScript',
+  //   preview: 'https://www.longevitegeriatria.com.br/'
+  // }
+];
 
 function renderProjects() {
   document.querySelectorAll('.project-card').forEach(c => c.remove());
   const grid = document.getElementById('projectsGrid');
   const addBtn = document.getElementById('addProjectBtn');
+
+  // Remove o botao publico de adicionar projeto.
+  if (addBtn) addBtn.remove();
 
   projects.forEach(p => {
     const card = document.createElement('div');
@@ -141,11 +143,11 @@ function renderProjects() {
         <div class="project-cat">${p.cat}</div>
         <div class="project-name">${p.name}</div>
         <div class="project-desc">${p.desc}</div>
-        <div class="project-tech">${p.tech.split(',').map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}</div>
+        <div class="project-tech">${(p.tech || 'Web').split(',').map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}</div>
       </div>
     `;
 
-    grid.insertBefore(card, addBtn);
+    grid.appendChild(card);
     setTimeout(() => {
       observer.observe(card);
       card.classList.add('visible');
@@ -154,29 +156,6 @@ function renderProjects() {
 }
 
 renderProjects();
-
-function addProject() {
-  const name = document.getElementById('pName').value.trim();
-  const cat = document.getElementById('pCat').value;
-  const desc = document.getElementById('pDesc').value.trim();
-  const url = document.getElementById('pUrl').value.trim();
-  const tech = document.getElementById('pTech').value.trim();
-  const preview = document.getElementById('pPreview').value.trim();
-
-  if (!name || !desc) { alert('Preencha o nome e a descrição!'); return; }
-
-  projects.push({ name, cat, desc, url, tech: tech || 'Web', preview });
-  localStorage.setItem('r3projects', JSON.stringify(projects));
-  renderProjects();
-  closeModal();
-  showToast('Projeto adicionado!');
-
-  document.getElementById('pName').value = '';
-  document.getElementById('pDesc').value = '';
-  document.getElementById('pUrl').value = '';
-  document.getElementById('pTech').value = '';
-  document.getElementById('pPreview').value = '';
-}
 
 // === CONTACT ===
 function submitContact() {
