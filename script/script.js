@@ -104,11 +104,10 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 const projects = [
   {
     name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
-    cat: 'site',
-    desc: 'Site institucional para clínica de geriatria e medicina integrada.',
+    cat: 'web', // web | site | mobile | system
+    desc: 'Site institucional para clínica de geriatria e medicina integrada, com apresentação de serviços, programa de longevidade, responsável técnica, avaliações e contato via WhatsApp.',
     url: 'https://www.longevitegeriatria.com.br/',
-    tech: 'HTML, CSS, JavaScript, Vercel',
-    preview: 'https://www.longevitegeriatria.com.br/'
+    tech: 'HTML, CSS, JavaScript, Vercel'
   }
 ];
 
@@ -123,13 +122,21 @@ function renderProjects() {
   projects.forEach(p => {
     const card = document.createElement('div');
     card.className = 'project-card reveal';
-    card.dataset.cat = p.cat;
 
-    const previewContent = p.preview
-      ? `<img src="${p.preview}" class="project-preview-img" alt="${p.name}">`
-      : p.url
-        ? `<iframe src="${p.url}" scrolling="no" loading="lazy"></iframe>`
-        : `<div class="project-preview-placeholder"><div class="icon">⌨</div><span>${p.cat.toUpperCase()}</span></div>`;
+    // Normaliza categorias antigas/alternativas para o filtro funcionar.
+    const rawCat = (p.cat || 'web').toLowerCase().trim();
+    const catMap = { site: 'web', sites: 'web', website: 'web', sistema: 'system', sistemas: 'system' };
+    const cat = catMap[rawCat] || rawCat;
+    card.dataset.cat = cat;
+
+    const preview = (p.preview || '').trim();
+    const isImage = /\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i.test(preview);
+
+    const previewContent = preview && isImage
+      ? `<img src="${preview}" class="project-preview-img" alt="${p.name}">`
+      : (p.url || preview)
+        ? `<iframe src="${p.url || preview}" scrolling="no" loading="lazy"></iframe>`
+        : `<div class="project-preview-placeholder"><div class="icon">⌨</div><span>${cat.toUpperCase()}</span></div>`;
 
     card.innerHTML = `
       <div class="project-preview">
@@ -139,7 +146,7 @@ function renderProjects() {
         </div>
       </div>
       <div class="project-info">
-        <div class="project-cat">${p.cat}</div>
+        <div class="project-cat">${cat}</div>
         <div class="project-name">${p.name}</div>
         <div class="project-desc">${p.desc}</div>
         <div class="project-tech">${(p.tech || 'Web').split(',').map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}</div>
