@@ -102,14 +102,14 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 // Edite esta lista para escolher quais projetos aparecem no site publico.
 // Depois salve, envie para o GitHub e faca novo deploy na Vercel.
 const projects = [
-   {
-     name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
-     cat: 'web', // web | mobile | system
-     desc: 'Projeto de website para clínica de geriatria',
-     url: 'https://www.longevitegeriatria.com.br/',
-     tech: 'HTML,CSS,JavaScript',
-     preview: 'https://www.longevitegeriatria.com.br/'
-   }
+  {
+    name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
+    cat: 'site',
+    desc: 'Site institucional para clínica de geriatria e medicina integrada.',
+    url: 'https://www.longevitegeriatria.com.br/',
+    tech: 'HTML, CSS, JavaScript, Vercel',
+    preview: 'https://www.longevitegeriatria.com.br/'
+  }
 ];
 
 function renderProjects() {
@@ -125,10 +125,10 @@ function renderProjects() {
     card.className = 'project-card reveal';
     card.dataset.cat = p.cat;
 
-    const previewContent = p.url
-      ? `<iframe src="${p.url}" scrolling="no" loading="lazy"></iframe>`
-      : p.preview
-        ? `<img src="${p.preview}" style="width:100%;height:100%;object-fit:cover;" alt="${p.name}">`
+    const previewContent = p.preview
+      ? `<img src="${p.preview}" class="project-preview-img" alt="${p.name}">`
+      : p.url
+        ? `<iframe src="${p.url}" scrolling="no" loading="lazy"></iframe>`
         : `<div class="project-preview-placeholder"><div class="icon">⌨</div><span>${p.cat.toUpperCase()}</span></div>`;
 
     card.innerHTML = `
