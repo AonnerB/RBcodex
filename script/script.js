@@ -102,15 +102,14 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 // Edite esta lista para escolher quais projetos aparecem no site publico.
 // Depois salve, envie para o GitHub e faca novo deploy na Vercel.
 const projects = [
-  // Exemplo:
-  // {
-  //   name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
-  //   cat: 'web', // web | mobile | system
-  //   desc: 'Projeto de website para clínica de geriatria',
-  //   url: 'https://www.longevitegeriatria.com.br/',
-  //   tech: 'HTML,CSS,JavaScript',
-  //   preview: 'https://www.longevitegeriatria.com.br/'
-  // }
+   {
+     name: 'LONGEVITÉ | Geriatria e Medicina Integrada',
+     cat: 'web', // web | mobile | system
+     desc: 'Projeto de website para clínica de geriatria',
+     url: 'https://www.longevitegeriatria.com.br/',
+     tech: 'HTML,CSS,JavaScript',
+     preview: 'https://www.longevitegeriatria.com.br/'
+   }
 ];
 
 function renderProjects() {
