@@ -108,6 +108,16 @@ const projects = [
     desc: 'Site institucional para clínica de geriatria e medicina integrada, com apresentação de serviços, programa de longevidade, responsável técnica, avaliações e contato via WhatsApp.',
     url: 'https://www.longevitegeriatria.com.br/',
     tech: 'HTML, CSS, JavaScript, Vercel'
+  },
+  {
+    name: 'EcoKM',
+    cat: 'mobile',
+    desc: 'Aplicativo mobile para calcular o consumo de combustível a partir da distância percorrida e dos litros abastecidos, ajudando o usuário a acompanhar a eficiência do veículo.',
+    downloadUrl: 'downloads/EcoKM.apk',
+    fileName: 'EcoKM.apk',
+    preview: 'assets/projects/ecokm-logo.webp',
+    buttonLabel: 'Baixar APK ↓',
+    tech: 'Android, APK, Mobile'
   }
 ];
 
@@ -138,11 +148,22 @@ function renderProjects() {
         ? `<iframe src="${p.url || preview}" scrolling="no" loading="lazy"></iframe>`
         : `<div class="project-preview-placeholder"><div class="icon">⌨</div><span>${cat.toUpperCase()}</span></div>`;
 
+    const downloadUrl = (p.downloadUrl || '').trim();
+    const projectUrl = (p.url || '').trim();
+    const actionUrl = downloadUrl || projectUrl;
+    const isDownload = Boolean(downloadUrl);
+    const buttonLabel = p.buttonLabel || (isDownload ? 'Baixar APK ↓' : 'Ver Projeto →');
+    const downloadAttr = isDownload ? ` download="${p.fileName || ''}" type="application/vnd.android.package-archive"` : '';
+    const targetAttr = isDownload ? '' : ' target="_blank" rel="noopener"';
+    const actionButton = actionUrl
+      ? `<a href="${actionUrl}"${targetAttr}${downloadAttr} class="preview-btn">${buttonLabel}</a>`
+      : '<span class="preview-btn" style="background:rgba(74,229,74,0.3)">Em Breve</span>';
+
     card.innerHTML = `
       <div class="project-preview">
         ${previewContent}
         <div class="preview-overlay">
-          ${p.url ? `<a href="${p.url}" target="_blank" class="preview-btn">Ver Projeto →</a>` : '<span class="preview-btn" style="background:rgba(74,229,74,0.3)">Em Breve</span>'}
+          ${actionButton}
         </div>
       </div>
       <div class="project-info">
@@ -150,6 +171,7 @@ function renderProjects() {
         <div class="project-name">${p.name}</div>
         <div class="project-desc">${p.desc}</div>
         <div class="project-tech">${(p.tech || 'Web').split(',').map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}</div>
+        ${isDownload ? `<a href="${downloadUrl}" download="${p.fileName || ''}" type="application/vnd.android.package-archive" class="project-download-btn">${buttonLabel}</a>` : ''}
       </div>
     `;
 
