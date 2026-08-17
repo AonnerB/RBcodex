@@ -118,6 +118,16 @@ const projects = [
     preview: 'assets/projects/ecokm-logo.webp',
     buttonLabel: 'Baixar APK ↓',
     tech: 'Android, APK, Mobile'
+  },
+  {
+    name: 'TradeFlow',
+    cat: 'system',
+    desc: 'O TradeFlow altera o campo de NCM de uma XML inserindo o HTSUS correspondente ao NCM (de acordo com o item declarado na NF).',
+    downloadUrl: 'downloads/TradeFlow.exe',
+    fileName: 'TradeFlow.exe',
+    preview: 'assets/projects/Trade-Logo.webp',
+    buttonLabel: 'Baixar sistema ↓',
+    tech: 'Sistema, pc, Python'
   }
 ];
 
