@@ -123,7 +123,7 @@ const projects = [
     name: 'TradeFlow',
     cat: 'system',
     desc: 'O TradeFlow altera o campo de NCM de uma XML inserindo o HTSUS correspondente ao NCM (de acordo com o item declarado na NF).',
-    downloadUrl: 'downloads/TradeFlow.exe',
+    downloadUrl: 'https://www.4shared.com/zip/RPZjbTlIge/TradeFlow.html',
     fileName: 'TradeFlow.exe',
     preview: 'assets/projects/Trade-Logo.webp',
     buttonLabel: 'Baixar sistema ↓',
@@ -163,11 +163,19 @@ function renderProjects() {
     const actionUrl = downloadUrl || projectUrl;
     const isDownload = Boolean(downloadUrl);
     const buttonLabel = p.buttonLabel || (isDownload ? 'Baixar APK ↓' : 'Ver Projeto →');
-    const downloadAttr = isDownload ? ` download="${p.fileName || ''}" type="application/vnd.android.package-archive"` : '';
-    const targetAttr = isDownload ? '' : ' target="_blank" rel="noopener"';
-    const actionButton = actionUrl
-      ? `<a href="${actionUrl}"${targetAttr}${downloadAttr} class="preview-btn">${buttonLabel}</a>`
-      : '<span class="preview-btn" style="background:rgba(74,229,74,0.3)">Em Breve</span>';
+    const isExternalDownload = isDownload && /^https?:\/\//i.test(downloadUrl);
+
+const downloadAttr = isDownload && !isExternalDownload
+  ? ` download="${p.fileName || ''}"`
+  : '';
+
+const targetAttr = isExternalDownload || !isDownload
+  ? ' target="_blank" rel="noopener noreferrer"'
+  : '';
+
+const actionButton = actionUrl
+  ? `<a href="${actionUrl}"${targetAttr}${downloadAttr} class="preview-btn">${buttonLabel}</a>`
+  : '<span class="preview-btn" style="background:rgba(74,229,74,0.3)">Em Breve</span>';
 
     card.innerHTML = `
       <div class="project-preview">
@@ -181,7 +189,7 @@ function renderProjects() {
         <div class="project-name">${p.name}</div>
         <div class="project-desc">${p.desc}</div>
         <div class="project-tech">${(p.tech || 'Web').split(',').map(t => `<span class="tech-tag">${t.trim()}</span>`).join('')}</div>
-        ${isDownload ? `<a href="${downloadUrl}" download="${p.fileName || ''}" type="application/vnd.android.package-archive" class="project-download-btn">${buttonLabel}</a>` : ''}
+        ${isDownload ? `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="project-download-btn">${buttonLabel}</a>` : ''}
       </div>
     `;
 
